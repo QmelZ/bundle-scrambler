@@ -13,10 +13,10 @@ Core.bundle.setProperties(edit);
 // the
 Events.on(ContentInitEvent, () => {
     Vars.content.each(e => {
+        if(e.minfo.mod !== null) return;
         if(!(e instanceof UnlockableContent)) return;
         let ee = e.getContentType() + "." + e.name;
         e.localizedName = Core.bundle.get(ee + ".name");
         e.description = Core.bundle.get(ee + ".description");
-        e.details = Core.bundle.get(ee + ".details");
     });
 });
