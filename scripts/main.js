@@ -18,5 +18,6 @@ Events.on(ContentInitEvent, () => {
         let ee = e.getContentType() + "." + e.name;
         e.localizedName = Core.bundle.get(ee + ".name");
         e.description = Core.bundle.get(ee + ".description");
+        e.details = Core.bundle.get(ee + ".details");
     });
 });
